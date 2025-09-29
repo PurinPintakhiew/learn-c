@@ -3,9 +3,13 @@
 int main(void) {
     double score;
     printf("Calculate Grade\n");
-    printf("Enter your score: ");
+    printf("Enter your score (negative number to quit): ");
 
-while (scanf("%lf", &score) != 0) {
+while (scanf("%lf", &score) == 1) {
+    if (score < 0) {
+        break;
+    }
+
     printf("Your score is: %.2lf\n", score);
     if (score >= 90) {
         printf("Grade is A\n");
@@ -18,10 +22,7 @@ while (scanf("%lf", &score) != 0) {
     } else {
         printf("Grade is F\n");
     }
-
-    if (score <= 0) {
-        break;
-    }
+    printf("Enter your score (negative number to quit): ");
 }
     printf("End of calculation\n");
     return 0;
