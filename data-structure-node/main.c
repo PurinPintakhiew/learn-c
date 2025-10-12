@@ -76,6 +76,16 @@ void printList(data *node) {
     }
 }
 
+data* searchNode(int keyword, data *head) {
+    data *ptr = head;
+    while (ptr != NULL) {
+        if (ptr->number == keyword)
+            return ptr;
+        ptr = ptr->next;
+    }
+    return NULL;
+}
+
 data* newNode(int number) {
     data *tmp = (data *)malloc(sizeof(data));
     if (tmp == NULL) {
